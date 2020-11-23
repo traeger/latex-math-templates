@@ -88,9 +88,10 @@
 \newcommand{\Ref}[1]{\nameref{#1} (\ref{#1})}
 
 % meta logic level
-\newcommand{\Implies}{\ensuremath{\mathbin{\Longrightarrow}}}
-\newcommand{\RImplies}{\ensuremath{\mathbin{\Longleftarrow}}}
-\newcommand{\Iff}{\ensuremath{\mathbin{\Longleftrightarrow}}}
+\def\Implies{\ensuremath{\mathbin{\Longrightarrow}}}
+\def\RImplies{\ensuremath{\mathbin{\Longleftarrow}}}
+\def\Iff{\ensuremath{\mathbin{\Longleftrightarrow}}}
+\def\sep{\quad&}
 
 % equation level
 \renewcommand{\iff}{\leftrightarrow}
@@ -112,16 +113,21 @@
 
 
 % std set definitions
-\newcommand{\UR}{\ensuremath{\mathbin{\mathbb{R}}}}
-\newcommand{\UN}{\ensuremath{\mathbin{\mathbb{N}}}}
-\newcommand{\UQ}{\ensuremath{\mathbin{\mathbb{Q}}}}
-\newcommand{\UZ}{\ensuremath{\mathbin{\mathbb{Z}}}}
-\newcommand{\UC}{\ensuremath{\mathbin{\mathbb{C}}}}
-\newcommand{\UB}{\ensuremath{\mathbin{\mathbb{B}}}}
+\def\UR{\ensuremath{\mathbin{\mathbb{R}}}}
+\def\UN{\ensuremath{\mathbin{\mathbb{N}}}}
+\def\UQ{\ensuremath{\mathbin{\mathbb{Q}}}}
+\def\UZ{\ensuremath{\mathbin{\mathbb{Z}}}}
+\def\UC{\ensuremath{\mathbin{\mathbb{C}}}}
+\def\UB{\ensuremath{\mathbin{\mathbb{B}}}}
+\def\neutral{\mathop{\mathbb{E}}}
 
 % vectors and matices
 \newcommand{\Vector}[1]{\begin{pmatrix}#1\end{pmatrix}}
-\newcommand{\Matrix}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newenvironment{Matrix}{
+	\begin{pmatrix}
+}{
+	\end{pmatrix}
+}
 
 % quoting
 \renewcommand{\quote}[1]{\glqq #1\grqq{}}
@@ -134,9 +140,15 @@
 }
 
 % special functions and symbols
-\def\ggT{\mathop{\text{ggT}}}
 \def\dd{\mathop{\text{d}\!}}
-\def\mod{\mathbin{\text{mod}}}
-\def\Det{\mathop{\text{Det}}}
 
+\def\newfunc#1{\mathop{\text{#1}}}
+\def\newbinaryop#1{\mathbin{\text{#1}}}
 
+\def\mod{\newbinaryop{mod}}
+\def\ggT{\newfunc{ggT}}
+\def\kgV{\newfunc{kgV}}
+\def\Det{\newfunc{Det}}
+\def\dim{\newfunc{dim}}
+\def\min{\newfunc{min}}
+\def\max{\newfunc{max}}
