@@ -8,6 +8,10 @@
 \usepackage{enumitem}
 \usepackage{babel}
 
+% add a newline after each paragraph
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}\\}
+
 % no par intends
 \setlength\parindent{0pt}
 
@@ -133,8 +137,13 @@
 \renewcommand{\quote}[1]{\glqq #1\grqq{}}
 
 % multirow
-\NewEnviron{row}[2][c]{
+\NewEnviron{row}{
+	\BODY
+	\\[\baselineskip]
+}
+\NewEnviron{col}[2][t]{
 	\begin{minipage}[#1]{#2\textwidth}
+		\vspace{0pt}
 		\BODY
 	\end{minipage}
 }
