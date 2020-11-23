@@ -1,0 +1,142 @@
+
+\usepackage{environ}
+\usepackage[utf8]{inputenc}
+\usepackage[fleqn]{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{babel}
+
+% no par intends
+\setlength\parindent{0pt}
+
+%ignore anything inside
+\NewEnviron{ignore}[1]{
+	
+}
+
+% write things aligned to the & symbol
+\NewEnviron{Eq}{
+	\begin{equation}\begin{aligned}
+	\BODY
+	\end{aligned}\end{equation}
+}
+
+\NewEnviron{Eq*}{
+	\begin{equation*}\begin{aligned}
+	\BODY
+	\end{aligned}\end{equation*}
+}
+
+%basic definition and theorem environments
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Korrolar}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{remark}{Anmerkung}
+
+\renewcommand*{\proofname}{Beweis}
+
+% named definition and theorem environments
+\NewEnviron{Definition}[1]{
+	\begin{definition}[#1]
+		\label{#1}
+		\BODY
+	\end{definition}
+}
+
+\NewEnviron{Theorem}[1]{
+	\begin{theorem}[#1]
+		\label{#1}
+		\BODY
+	\end{theorem}
+}
+
+\NewEnviron{Lemma}[1]{
+	\begin{lemma}[#1]
+		\label{#1}
+		\BODY
+	\end{lemma}
+}
+
+\NewEnviron{Korrolar}[1]{
+	\begin{corollary}[#1]
+		\label{#1}
+		\BODY
+	\end{corollary}
+}
+
+\NewEnviron{Remark}[1]{
+	\begin{remark}[#1]
+		\label{#1}
+		\BODY
+	\end{remark}
+}
+
+% remove the meaning of \proof and \endproof
+\let\proof\relax
+\let\endproof\relax
+\NewEnviron{proof}{
+	{\em Beweis}
+	\BODY
+	\hfill
+	$\square$
+}
+
+% named reference
+\newcommand{\Ref}[1]{\nameref{#1} (\ref{#1})}
+
+% meta logic level
+\newcommand{\Implies}{\ensuremath{\mathbin{\Longrightarrow}}}
+\newcommand{\RImplies}{\ensuremath{\mathbin{\Longleftarrow}}}
+\newcommand{\Iff}{\ensuremath{\mathbin{\Longleftrightarrow}}}
+
+% equation level
+\renewcommand{\iff}{\leftrightarrow}
+
+% sets
+\def\setunion{\cup}
+\def\Setunion{\bigcup\limits}
+\def\setintersect{\cap}
+\def\Setintersect{\bigcap\limits}
+\def\setsize#1{\vert #1 \vert}
+
+% set logic
+\def\lxor{\mathbin{\dot{\lor}}}
+\def\limplies{\mathop{\rightarrow}\limits}
+\def\lrightimplies{\mathop{\leftarrow}\limits}
+\def\liff{\mathop{\leftrightarrow}\limits}
+\def\Land{\mathop{\bigwedge}\limits}
+\def\Lor{\mathop{\bigvee}\limits}
+
+
+% std set definitions
+\newcommand{\UR}{\ensuremath{\mathbin{\mathbb{R}}}}
+\newcommand{\UN}{\ensuremath{\mathbin{\mathbb{N}}}}
+\newcommand{\UQ}{\ensuremath{\mathbin{\mathbb{Q}}}}
+\newcommand{\UZ}{\ensuremath{\mathbin{\mathbb{Z}}}}
+\newcommand{\UC}{\ensuremath{\mathbin{\mathbb{C}}}}
+\newcommand{\UB}{\ensuremath{\mathbin{\mathbb{B}}}}
+
+% vectors and matices
+\newcommand{\Vector}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\Matrix}[1]{\begin{pmatrix}#1\end{pmatrix}}
+
+% quoting
+\renewcommand{\quote}[1]{\glqq #1\grqq{}}
+
+% multirow
+\NewEnviron{row}[2][c]{
+	\begin{minipage}[#1]{#2\textwidth}
+		\BODY
+	\end{minipage}
+}
+
+% special functions and symbols
+\def\ggT{\mathop{\text{ggT}}}
+\def\dd{\mathop{\text{d}\!}}
+\def\mod{\mathbin{\text{mod}}}
+\def\Det{\mathop{\text{Det}}}
+
+

@@ -1,0 +1,58 @@
+\documentclass[]{article}
+
+\input{imports/general_math_layout.tex}
+\input{imports/assignment_layout.tex}
+
+%opening
+\title{Test}
+\author{A. B.}
+
+\begin{document}
+
+\maketitle
+
+\begin{task}
+	\begin{task-todo}
+		\item Riemann integrierbar
+		\item $\int_{a}^{b} f(x) dx$
+	\end{task-todo}
+	
+	\begin{subtask}{a}
+		\begin{proof}
+			\case{1}
+			$\{ x \in [a,b]: f(x) \neq g(x) \} = \emptyset $ \\
+			\Implies $f = g$, also auch \reftask{b}.
+			
+			\case{2}
+			$\{ x \in [a,b]: f(x) \neq g(x) \} \neq \emptyset $ \\
+			da $\RU$ laut der Erzählung von Grantelbär die Menge 
+			$\{ x \in [a,b]: f(x) = g(x) \}$ groß ist :D.\\
+			
+			Da diese keine Gerade \quote{bilden}.\\
+			
+			Außerdem $I^*(g) = I^*(f)$ und $I_*(g) = I_*(f)$ \footnote{Def. Riemann-integrierbar}.
+			Und so ist auch $\int_{a}^{b} g(x) dx = \int_{a}^{b} f(x) dx$
+		\end{proof}
+	\end{subtask}
+\end{task}
+
+\begin{task}
+	\begin{remark}
+		Aus dem Hauptsätzen .. 
+	\end{remark}
+
+	\begin{task-todo}
+		\item Haben die Funktionen $f_i$ eine Stammfunktion?
+	\end{task-todo}
+
+	Vielleicht
+	\begin{Eq*}
+		a \limplies b
+	\end{Eq*}
+
+	\begin{ignore}
+		Das hier wird ignoriert.
+	\end{ignore}
+\end{task}
+
+\end{document}

@@ -1,0 +1,31 @@
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=20mm,
+	top=20mm,
+}
+
+\NewEnviron{task}{
+	\section{Aufgabe \thesection}
+	\BODY
+	\hfill
+}
+
+\NewEnviron{subtask}[1]{
+	\subsection*{Aufgabe \thesection #1)}
+	\BODY
+}
+
+\NewEnviron{task-todo}{
+	Zu zeigen ist
+	\begin{enumerate}[label=(\alph*)]
+		\BODY
+	\end{enumerate}
+}
+
+\newcommand{\case}[1]{\subparagraph{Fall #1}}
+\newcommand{\reftask}[1]{(#1)}
+
+\renewcommand{\thefootnote}{[\roman{footnote}]}
+
+
