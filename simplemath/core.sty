@@ -93,13 +93,12 @@
 \def\Ref#1{\nameref{#1} (\ref{#1})}
 
 % meta logic level
-\def\Implies{\ensuremath{\mathbin{\Longrightarrow}}}
-\def\RImplies{\ensuremath{\mathbin{\Longleftarrow}}}
-\def\Iff{\ensuremath{\mathbin{\Longleftrightarrow}}}
-\def\sep{\quad&}
+\def\newmetalogic#1{\ifmmode\else\quad\fi\ensuremath{#1}\ifmmode\else\quad\fi}
+\def\Implies{\newmetalogic{\mathbin{\Longrightarrow}}}
+\def\RImplies{\newmetalogic{\mathbin{\Longleftarrow}}}
+\def\Iff{\newmetalogic{\mathbin{\Longleftrightarrow}}}
+\def\sep{\quad &}
 
-% equation level
-\renewcommand{\iff}{\leftrightarrow}
 
 % sets
 \def\setunion{\cup}
@@ -108,14 +107,13 @@
 \def\Setintersect{\bigcap\limits}
 \def\setsize#1{\vert #1 \vert}
 
-% set logic
+% logic
 \def\lxor{\mathbin{\dot{\lor}}}
 \def\limplies{\mathop{\rightarrow}\limits}
 \def\lrightimplies{\mathop{\leftarrow}\limits}
 \def\liff{\mathop{\leftrightarrow}\limits}
 \def\Land{\mathop{\bigwedge}\limits}
 \def\Lor{\mathop{\bigvee}\limits}
-
 
 % std set definitions
 \def\UR{\ensuremath{\mathbin{\mathbb{R}}}}
@@ -152,6 +150,7 @@
 % special functions and symbols
 \def\dd{\mathop{\text{d}\!}}
 
+% general helper to define binop and functions, see below
 \def\newfunc#1{\mathop{\text{#1}}}
 \def\newbinaryop#1{\mathbin{\text{#1}}}
 
