@@ -7,8 +7,9 @@
 	top=20mm,
 }
 
-\NewEnviron{task}{
-	\section{Aufgabe \thesection}
+\NewEnviron{task}[1]{
+	\setcounter{section}{\numexpr #1\relax}
+	\section*{Aufgabe \thesection}
 	\BODY
 	\hfill
 }
@@ -19,7 +20,7 @@
 }
 
 \NewEnviron{task-todo}{
-	Zu zeigen ist
+	Zu zeigen ist,
 	\begin{enumerate}[label=(\alph*)]
 		\BODY
 	\end{enumerate}
