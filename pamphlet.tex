@@ -1,0 +1,61 @@
+\documentclass[oneside]{article}
+% \documentclass[twoside]{article} %%
+
+\usepackage{simplemath/core}
+\usepackage{simplemath/pamphlet}
+
+%opening
+\title{Test}
+\author{A. B.}
+
+\begin{document}
+\maketitle
+\tableofcontents 
+\newpage
+
+Text Text Text
+
+\Section[sec:einleitung]{Einleitung}
+Mehr Text Text Text
+
+\Subsection[subsec:motivation]{Motivation usw}
+\begin{proof}
+	$\{ x \in [a,b]: f(x) \neq g(x) \} = \emptyset $ \\
+	\Implies $f = g$, also auch b.
+	
+	$\{ x \in [a,b]: f(x) \neq g(x) \} \neq \emptyset $ \\
+	da $\UR$ laut der Erzählung von Grantelbär die Menge 
+	$\big\{ x \in [a,b]: f(x) = g\big(f(x)\big) \big\}$ groß ist :D.\\
+	
+	Da diese keine Gerade \quote{bilden}.\\
+	
+	Außerdem $I^*(g) = I^*(f)$ und $I_*(g) = I_*(f)$ \footnote{Def. Riemann-integrierbar}.
+	Und so ist auch $\int_{a}^{b} g(x) dx = \int_{a}^{b} f(x) dx$
+\end{proof}
+
+\Paragraph[par:bla]{Bla Bla Bla Paragraph}
+Vielleicht
+\begin{Eq*}
+	a \limplies b
+\end{Eq*}
+
+\begin{ignore}
+	Das hier wird ignoriert.
+\end{ignore}
+
+\Subsection{Subsektion}
+\Subsubsection{Subsubsektion}
+\Paragraph{Paragraph 3}
+Text
+
+\Image{0.35}{examplepicture}{Ein Bild}
+
+Mehr Text
+
+\Image[image:2]{0.35}{examplepicture}{Ein zweites Bild}
+
+Mehr Text zu Abbildung \ref{image:2}.
+
+Oder wie im Abschnitt \ref{subsec:motivation} erwähnt.
+
+\end{document}

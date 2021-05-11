@@ -1,0 +1,39 @@
+\ProvidesPackage{simplemath/pamphlet}[Package to create pamphlets]
+
+\RequirePackage{geometry}
+%\RequirePackage[paperheight=12cm,paperwidth=18cm,includehead,includefoot,showframe]{geometry}
+\RequirePackage{sectsty} % rules over sections
+\RequirePackage[onehalfspacing]{setspace}
+\RequirePackage{fancyhdr} % custom header and footer
+
+\geometry{
+	a4paper,
+	%top=25mm,
+	%left=30mm,
+	textwidth=125mm,
+	marginparwidth=30mm, % note margin
+	bmargin=15mm, % margin to footnote
+}
+
+\sectionfont{\sectionrule{3ex}{0pt}{-1ex}{1pt}}
+\subsectionfont{\sectionrule{3ex}{0pt}{-1ex}{1pt}}
+
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\leftmark}
+\fancyhead[RE,LO]{\thepage}
+%\fancyfoot[CE,CO]{\leftmark}
+%\fancyfoot[LE,RO]{\thepage}
+
+\renewcommand{\thefootnote}{[\roman{footnote}]}
+
+% title is on a lonely page with no page numbering
+\let\oldmaketitle\maketitle
+\renewcommand{\maketitle}{
+	\clearpage\oldmaketitle
+	\thispagestyle{empty}
+	\newpage
+}

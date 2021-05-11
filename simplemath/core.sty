@@ -10,6 +10,9 @@
 \RequirePackage[ngerman]{babel}
 \RequirePackage{graphicx}
 \RequirePackage{float}
+\RequirePackage{natbib}
+
+\bibliographystyle{alpha}
 
 % add a newline after each paragraph
 \let\oldparagraph\paragraph
@@ -21,6 +24,28 @@
 %ignore anything inside
 \NewEnviron{ignore}[1]{
 	
+}
+
+%sections and paragraphs with labels
+\newcommand{\Section}[2][]{
+    \section{#2}
+    \label{#1}
+}
+\newcommand{\Subsection}[2][]{
+    \subsection{#2}
+    \label{#1}
+}
+\newcommand{\Subsubsection}[2][]{
+    \subsubsection{#2}
+    \label{#1}
+}
+\newcommand{\Paragraph}[2][]{
+    \paragraph{#2}
+    \label{#1}
+}
+\newcommand{\Subparagraph}[2][]{
+    \subparagraph{#2}
+    \label{#1}
 }
 
 % write things aligned to the & symbol
@@ -173,3 +198,10 @@
 	\end{figure}
 }
 
+%algebra
+\def\normdevider{\vartriangleright}
+\def\normdevidereq{\trianglerighteq}
+\def\rnormdevider{\vartriangleright}
+\def\rnormdevidereq{\trianglerighteq}
+\def\lnormdevider{\vartriangleleft}
+\def\lnormdevidereq{\trianglelefteq}
